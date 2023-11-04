@@ -1,3 +1,4 @@
+import 'package:_3rd_course/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import '../styles/app_colors.dart';
@@ -18,7 +19,8 @@ class LoginPage extends StatelessWidget {
                 Spacer(),
                 Text(
                   'هذا افضل تطبيق بالحياةّّّ!!',
-                  style: GoogleFonts.cairo,
+                  style: GoogleFonts.arefRuqaa(
+                      color: AppColors.info, fontSize: 40),
                 ),
                 SizedBox(
                   height: 64,
@@ -97,14 +99,19 @@ class LoginPage extends StatelessWidget {
                   height: 48,
                   width: double.infinity,
                   child: ElevatedButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        Navigator.of(context).pushReplacementNamed('/main');
+                      },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
                             borderRadius:
                                 BorderRadius.all(Radius.circular(10))),
                         backgroundColor: AppColors.primary,
                       ),
-                      child: Text('Log in')),
+                      child: Text(
+                        'Log in',
+                        style: TextStyle(fontWeight: FontWeight.w600),
+                      )),
                 ),
                 Spacer(),
                 Text(
