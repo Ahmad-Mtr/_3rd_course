@@ -1,5 +1,6 @@
 import 'package:_3rd_course/components/post_item.dart';
 import 'package:_3rd_course/components/toolbar.dart';
+import 'package:_3rd_course/config/app_icons.dart';
 import 'package:_3rd_course/styles/app_colors.dart';
 import 'package:_3rd_course/styles/app_text.dart';
 import 'package:flutter/material.dart';
@@ -18,7 +19,7 @@ class HomePage extends StatelessWidget {
         actions: [
           IconButton(
             onPressed: () {},
-            icon: SvgPicture.asset('assets/svg/ic_location.svg'),
+            icon: SvgPicture.asset(AppIcons.icLocation),
           ),
         ],
       ),

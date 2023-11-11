@@ -1,3 +1,5 @@
+import 'package:_3rd_course/config/app_routes.dart';
+import 'package:_3rd_course/pages/editor_page.dart';
 import 'package:_3rd_course/pages/home_page.dart';
 import 'package:_3rd_course/pages/login_page.dart';
 import 'package:_3rd_course/pages/main_page.dart';
@@ -21,13 +23,8 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
       ),
       debugShowCheckedModeBanner: false,
-      initialRoute: '/',
-      routes: {
-        '/': (context) => LoginPage(),
-        '/home': (context) => HomePage(),
-        '/main': (context) => MainPage(),
-        '/profile': (context) => ProfilePage(),
-      },
+      initialRoute: AppRoutes.login,
+      routes: AppRoutes.pages,
     );
   }
 }

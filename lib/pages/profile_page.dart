@@ -1,7 +1,14 @@
 import 'package:_3rd_course/components/toolbar.dart';
+import 'package:_3rd_course/config/app_routes.dart';
+import 'package:_3rd_course/config/app_strings.dart';
 import 'package:_3rd_course/styles/app_colors.dart';
 import 'package:_3rd_course/styles/app_text.dart';
 import 'package:flutter/material.dart';
+
+enum ProfileMenu {
+  edit,
+  logout,
+}
 
 class ProfilePage extends StatelessWidget {
   const ProfilePage({super.key});
@@ -10,17 +17,48 @@ class ProfilePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: Toolbar(
-        title: 'Profile',
-        actions: [IconButton(onPressed: () {}, icon: Icon(Icons.menu))],
+        title: AppStrings.profile,
+        actions: [
+          PopupMenuButton<ProfileMenu>(
+              onSelected: ((value) {
+                switch (value) {
+                  case ProfileMenu.edit:
+                    Navigator.of(context).pushNamed(AppRoutes.editProfile);
+                    break;
+                  case ProfileMenu.logout:
+                    print('Log out');
+                    break;
+                  default:
+                }
+              }),
+              icon: const Icon(Icons.more_vert),
+              itemBuilder: (context) {
+                return [
+                  PopupMenuItem(
+                    child: Text('Edit'),
+                    value: ProfileMenu.edit,
+                  ),
+                  PopupMenuItem(
+                    child: Text('Log out'),
+                    value: ProfileMenu.logout,
+                  ),
+                ];
+              }),
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24),
         child: Column(
           children: [
-            Image.asset(
-              'assets/tmp/Levantine-guy.png',
-              width: 90,
-              height: 90,
+            ClipRRect(
+              borderRadius: BorderRadius.all(
+                Radius.circular(20),
+              ),
+              child: Image.asset(
+                'assets/tmp/Levantine-guy.png',
+                width: 90,
+                height: 90,
+              ),
             ),
             SizedBox(
               height: 24,

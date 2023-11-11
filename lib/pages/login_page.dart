@@ -1,3 +1,7 @@
+import 'package:_3rd_course/components/app_text_field.dart';
+import 'package:_3rd_course/config/app_icons.dart';
+import 'package:_3rd_course/config/app_routes.dart';
+import 'package:_3rd_course/config/app_strings.dart';
 import 'package:_3rd_course/pages/home_page.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -30,7 +34,7 @@ class LoginPage extends StatelessWidget {
                       //Image.asset(),
 
                       Text(
-                        'Hello, Welcome back!',
+                        AppStrings.helloWelcome,
                         style: TextStyle(
                             color: AppColors.font,
                             fontWeight: FontWeight.w600,
@@ -40,7 +44,7 @@ class LoginPage extends StatelessWidget {
                         height: 16,
                       ),
                       Text(
-                        'Log in to Continue',
+                        AppStrings.loginToContinue,
                         style: TextStyle(
                             color: AppColors.font,
                             fontSize: 16,
@@ -50,33 +54,11 @@ class LoginPage extends StatelessWidget {
                   ),
                 ),
                 Spacer(),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Username',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.5),
-                  ),
-                ),
+                AppTextField(Hint: AppStrings.username),
                 SizedBox(
                   height: 16,
                 ),
-                TextField(
-                  decoration: InputDecoration(
-                    hintText: 'Password',
-                    border: OutlineInputBorder(
-                      borderRadius: BorderRadius.all(
-                        Radius.circular(12),
-                      ),
-                    ),
-                    filled: true,
-                    fillColor: Colors.white.withOpacity(0.5),
-                  ),
-                ),
+                AppTextField(Hint: "Password"),
                 Align(
                   alignment: Alignment.centerRight,
                   child: TextButton(
@@ -85,7 +67,7 @@ class LoginPage extends StatelessWidget {
                       foregroundColor: AppColors.white,
                     ),
                     child: Text(
-                      'Forgot my password',
+                      AppStrings.forgotPassword,
                       style: TextStyle(
                           decoration: TextDecoration.underline,
                           color: AppColors.primary),
@@ -100,7 +82,8 @@ class LoginPage extends StatelessWidget {
                   width: double.infinity,
                   child: ElevatedButton(
                       onPressed: () {
-                        Navigator.of(context).pushReplacementNamed('/main');
+                        Navigator.of(context)
+                            .pushReplacementNamed(AppRoutes.main);
                       },
                       style: ElevatedButton.styleFrom(
                         shape: RoundedRectangleBorder(
@@ -109,13 +92,13 @@ class LoginPage extends StatelessWidget {
                         backgroundColor: AppColors.primary,
                       ),
                       child: Text(
-                        'Log in',
+                        AppStrings.login,
                         style: TextStyle(fontWeight: FontWeight.w600),
                       )),
                 ),
                 Spacer(),
                 Text(
-                  'Or Sign in with',
+                  AppStrings.orSignInWith,
                   style: TextStyle(color: AppColors.font),
                 ),
                 SizedBox(
@@ -136,14 +119,14 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/google.png',
+                        AppIcons.icGoogle,
                         width: 22,
                         height: 22,
                       ),
                       SizedBox(
                         width: 8,
                       ),
-                      Text('Login with Google'),
+                      Text(AppStrings.loginWithGoogle),
                     ],
                   ),
                 ),
@@ -161,14 +144,14 @@ class LoginPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Image.asset(
-                        'assets/images/facebook.png',
+                        AppIcons.icFacebook,
                         width: 22,
                         height: 22,
                       ),
                       SizedBox(
                         width: 8,
                       ),
-                      Text('Login with Facebook'),
+                      Text(AppStrings.loginWithFacebook),
                     ],
                   ),
                 ),
@@ -176,13 +159,13 @@ class LoginPage extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "Don't have an account?",
+                      AppStrings.dontHaveAccount,
                       style: TextStyle(color: AppColors.font),
                     ),
                     TextButton(
                       onPressed: () {},
                       child: Text(
-                        'Sign up',
+                        AppStrings.signup,
                         style: TextStyle(
                             decoration: TextDecoration.underline,
                             color: AppColors.primary),
