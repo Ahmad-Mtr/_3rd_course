@@ -14,6 +14,7 @@ class AppRoutes {
     home: (context) => HomePage(),
     main: (context) => MainPage(),
     editProfile: (context) => EditProfilePage(),
+    login: (context) => LoginPage(),
     //nearby: (context) => NearbyPage(),
     //user: (context) => UserPage(),
   };

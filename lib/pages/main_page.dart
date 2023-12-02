@@ -1,4 +1,5 @@
 import 'package:_3rd_course/config/app_icons.dart';
+import 'package:_3rd_course/pages/comment_page.dart';
 import 'package:_3rd_course/pages/home_page.dart';
 import 'package:_3rd_course/pages/profile_page.dart';
 import 'package:_3rd_course/styles/app_colors.dart';
@@ -57,9 +58,7 @@ class _MainPageState extends State<MainPage> {
     Center(
       child: Text('Add Post'),
     ),
-    Center(
-      child: Text('Comment'),
-    ),
+    CommentPage(),
     ProfilePage()
   ];
 }
